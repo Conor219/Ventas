@@ -27,9 +27,9 @@ namespace Ventas
         {
             try
             {
-                ProductosCategorias productoscategorias = new ProductosCategorias();
-                productoscategorias.Descripcion = txtDescripcion.Text;
-                productoscategorias.Agregar(productoscategorias);
+                ProductoCategoria productocategoria = new ProductoCategoria();
+                productocategoria.Descripcion = txtDescripcion.Text;
+                productocategoria.Agregar(productocategoria);
 
                 MessageBox.Show("Categoría del producto agregada correctamente.");
             }
@@ -44,10 +44,10 @@ namespace Ventas
         {
             try
             {
-                ProductosCategorias productoscategorias = new ProductosCategorias();
-                productoscategorias.Id = int.Parse(txtId.Text);
-                productoscategorias.Descripcion = txtDescripcion.Text;
-                productoscategorias.Actualizar(productoscategorias);
+                ProductoCategoria productocategoria = new ProductoCategoria();
+                productocategoria.Id = int.Parse(txtId.Text);
+                productocategoria.Descripcion = txtDescripcion.Text;
+                productocategoria.Actualizar(productocategoria);
 
                 MessageBox.Show("Categoría del producto actualizada correctamente.");
             }
@@ -62,8 +62,8 @@ namespace Ventas
         {
             try
             {
-                ProductosCategorias productoscategorias = new ProductosCategorias();
-                productoscategorias.Eliminar(int.Parse(txtId.Text));
+                ProductoCategoria productocategoria = new ProductoCategoria();
+                productocategoria.Eliminar(int.Parse(txtId.Text));
 
                 MessageBox.Show("Cliente eliminado correctamente.");
             }

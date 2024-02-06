@@ -7,18 +7,18 @@ using System.Threading.Tasks;
 
 namespace Ventas.Entidades
 {
-    internal class ProductosCategorias
+    internal class ProductoCategoria
     {
         private string _connectionString;
         public int Id { get; set; }
         public string Descripcion { get; set; }
 
-        public ProductosCategorias()
+        public ProductoCategoria()
         {
             _connectionString = "Server=localhost;Database=VentasDB;Trusted_Connection=True;TrustServerCertificate=True";
         }
 
-        public void Agregar(ProductosCategorias productoscategorias)
+        public void Agregar(ProductoCategoria productocategoria)
         {
             try
             {
@@ -32,7 +32,7 @@ namespace Ventas.Entidades
                     {
                         cmd.CommandType = System.Data.CommandType.Text;
 
-                        cmd.Parameters.AddWithValue("@Descripcion", productoscategorias.Descripcion);
+                        cmd.Parameters.AddWithValue("@Descripcion", productocategoria.Descripcion);
 
                         con.Open();
                         cmd.ExecuteNonQuery();
@@ -46,7 +46,7 @@ namespace Ventas.Entidades
                 throw;
             }
         }
-        public void Actualizar(ProductosCategorias productoscategorias)
+        public void Actualizar(ProductoCategoria productocategoria)
         {
             try
             {
@@ -60,7 +60,7 @@ namespace Ventas.Entidades
                     {
                         cmd.CommandType = System.Data.CommandType.Text;
 
-                        cmd.Parameters.AddWithValue("@Descripcion", productoscategorias.Descripcion);
+                        cmd.Parameters.AddWithValue("@Descripcion", productocategoria.Descripcion);
 
                         con.Open();
                         cmd.ExecuteNonQuery();
