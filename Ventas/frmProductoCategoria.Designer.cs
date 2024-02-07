@@ -1,6 +1,6 @@
 ﻿namespace Ventas
 {
-    partial class frmProductosCategorias
+    partial class frmProductoCategoria
     {
         /// <summary>
         /// Required designer variable.
@@ -98,9 +98,9 @@
             this.txtId.Location = new System.Drawing.Point(97, 10);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(222, 22);
-            this.txtId.TabIndex = 6;
+            this.txtId.TabIndex = 0;
             // 
-            // frmProductosCategorias
+            // frmProductoCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -112,7 +112,7 @@
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.label1);
-            this.Name = "frmProductosCategorias";
+            this.Name = "frmProductoCategoria";
             this.Text = "Productos Categorías";
             this.ResumeLayout(false);
             this.PerformLayout();

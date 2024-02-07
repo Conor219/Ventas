@@ -11,9 +11,9 @@ using Ventas.Entidades;
 
 namespace Ventas
 {
-    public partial class frmProductosCategorias : Form
+    public partial class frmProductoCategoria : Form
     {
-        public frmProductosCategorias()
+        public frmProductoCategoria()
         {
             InitializeComponent();
         }
@@ -65,7 +65,7 @@ namespace Ventas
                 ProductoCategoria productocategoria = new ProductoCategoria();
                 productocategoria.Eliminar(int.Parse(txtId.Text));
 
-                MessageBox.Show("Cliente eliminado correctamente.");
+                MessageBox.Show("Categoría del producto eliminada correctamente.");
             }
             catch (Exception ex)
             {

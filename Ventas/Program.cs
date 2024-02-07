@@ -16,7 +16,7 @@ namespace Ventas
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmProductosCategorias());
+            Application.Run(new frmProducto());
         }
     }
 }
