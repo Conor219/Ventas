@@ -16,6 +16,7 @@ namespace Ventas
         public frmProductos()
         {
             InitializeComponent();
+            CargarProductos();
         }
         private void CargarProductos()
         {
