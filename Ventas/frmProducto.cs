@@ -16,8 +16,26 @@ namespace Ventas
         public frmProducto()
         {
             InitializeComponent();
+            CargarCatalogos();
         }
 
+        private void CargarCatalogos()
+        {
+            try
+            {
+                ProductoCategoria categoria = new ProductoCategoria();
+                DataTable dtCategorias = categoria.ObtenerTodos();
+
+                cmbCategorias.DataSource = dtCategorias;
+                cmbCategorias.DisplayMember = "Descripcion";
+                cmbCategorias.ValueMember = "Id";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocurrió un error al cargar catálogos. {ex.Message}");
+            }
+
+        }
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             try
@@ -26,7 +44,7 @@ namespace Ventas
                 producto.CodigoBarras = txtCodigoBarras.Text;
                 producto.Codigo = txtCodigo.Text;
                 producto.Descripcion = txtDescripcion.Text;
-                producto.CategoriaId = int.Parse(txtCategoriaId.Text);
+                producto.CategoriaId = Convert.ToInt32(cmbCategorias.SelectedValue);
                 producto.Agregar(producto);
 
                 MessageBox.Show("Producto agregado correctamente.");
@@ -49,7 +67,7 @@ namespace Ventas
                     producto.CodigoBarras = txtCodigoBarras.Text;
                     producto.Codigo = txtCodigo.Text;
                     producto.Descripcion = txtDescripcion.Text;
-                    producto.CategoriaId = int.Parse(txtCategoriaId.Text);
+                 // producto.CategoriaId = int.Parse(txtCategoriaId.Text);
                     producto.Actualizar(producto);
 
                     MessageBox.Show("Producto actualizado correctamente.");

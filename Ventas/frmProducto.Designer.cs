@@ -34,13 +34,13 @@
             this.txtCodigoBarras = new System.Windows.Forms.TextBox();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
-            this.txtCategoriaId = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
+            this.cmbCategorias = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -65,36 +65,29 @@
             // 
             this.txtId.Location = new System.Drawing.Point(131, 6);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(161, 22);
+            this.txtId.Size = new System.Drawing.Size(201, 22);
             this.txtId.TabIndex = 0;
             // 
             // txtCodigoBarras
             // 
             this.txtCodigoBarras.Location = new System.Drawing.Point(131, 33);
             this.txtCodigoBarras.Name = "txtCodigoBarras";
-            this.txtCodigoBarras.Size = new System.Drawing.Size(161, 22);
+            this.txtCodigoBarras.Size = new System.Drawing.Size(201, 22);
             this.txtCodigoBarras.TabIndex = 1;
             // 
             // txtCodigo
             // 
             this.txtCodigo.Location = new System.Drawing.Point(131, 61);
             this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(161, 22);
+            this.txtCodigo.Size = new System.Drawing.Size(201, 22);
             this.txtCodigo.TabIndex = 2;
             // 
             // txtDescripcion
             // 
             this.txtDescripcion.Location = new System.Drawing.Point(131, 89);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(161, 22);
+            this.txtDescripcion.Size = new System.Drawing.Size(201, 22);
             this.txtDescripcion.TabIndex = 3;
-            // 
-            // txtCategoriaId
-            // 
-            this.txtCategoriaId.Location = new System.Drawing.Point(131, 117);
-            this.txtCategoriaId.Name = "txtCategoriaId";
-            this.txtCategoriaId.Size = new System.Drawing.Size(161, 22);
-            this.txtCategoriaId.TabIndex = 4;
             // 
             // label3
             // 
@@ -153,15 +146,24 @@
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
+            // cmbCategorias
+            // 
+            this.cmbCategorias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCategorias.FormattingEnabled = true;
+            this.cmbCategorias.Location = new System.Drawing.Point(131, 117);
+            this.cmbCategorias.Name = "cmbCategorias";
+            this.cmbCategorias.Size = new System.Drawing.Size(201, 24);
+            this.cmbCategorias.TabIndex = 8;
+            // 
             // frmProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(372, 207);
+            this.Controls.Add(this.cmbCategorias);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.txtCategoriaId);
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.txtCodigoBarras);
@@ -172,7 +174,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmProducto";
-            this.Text = "frmProducto";
+            this.Text = "Producto";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -186,12 +188,12 @@
         private System.Windows.Forms.TextBox txtCodigoBarras;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.TextBox txtDescripcion;
-        private System.Windows.Forms.TextBox txtCategoriaId;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.ComboBox cmbCategorias;
     }
 }
