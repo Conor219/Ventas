@@ -154,14 +154,10 @@ namespace Ventas.Entidades
             {
                 using (SqlConnection con = new SqlConnection(_connectionString))
                 {
-                    string query = "SELECT Id, CodigoBarras, Codigo, Descripcion, Categoria" +
-                        " FROM vProductos " +
-                        " WHERE " +
-                        "Descripcion LIKE '%'+@Consulta+'%' OR Categoria LIKE '%'+@Consulta+'%'";
 
-                    using (SqlCommand cmd = new SqlCommand(query, con))
+                    using (SqlCommand cmd = new SqlCommand("spProductosConsulta", con))
                     {
-                        cmd.CommandType = System.Data.CommandType.Text;
+                        cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
                         cmd.Parameters.AddWithValue("@Consulta", consulta);
 
