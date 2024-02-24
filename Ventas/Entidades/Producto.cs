@@ -125,13 +125,45 @@ namespace Ventas.Entidades
             {
                 using (SqlConnection con = new SqlConnection(_connectionString))
                 {
-                    string query = "SELECT Id, CodigoBarras, Codigo, Descripcion, CategoriaId," +
-                        "(select Descripcion from ProductosCategorias WHERE ProductosCategorias.Id = Productos.CategoriaId) AS Categoria" +
-                        " FROM Productos";
+                    string query = "SELECT Id, CodigoBarras, Codigo, Descripcion, Categoria" +
+                        " FROM vProductos";
 
                     using (SqlCommand cmd = new SqlCommand(query, con))
                     {
                         cmd.CommandType = System.Data.CommandType.Text;
+
+                        con.Open();
+
+                        SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                        DataTable dt = new DataTable();
+                        adapter.Fill(dt);
+                        return dt;
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public DataTable Consultar(string consulta)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(_connectionString))
+                {
+                    string query = "SELECT Id, CodigoBarras, Codigo, Descripcion, Categoria" +
+                        " FROM vProductos " +
+                        " WHERE " +
+                        "Descripcion LIKE '%'+@Consulta+'%' OR Categoria LIKE '%'+@Consulta+'%'";
+
+                    using (SqlCommand cmd = new SqlCommand(query, con))
+                    {
+                        cmd.CommandType = System.Data.CommandType.Text;
+
+                        cmd.Parameters.AddWithValue("@Consulta", consulta);
 
                         con.Open();
 
